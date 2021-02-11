@@ -41,20 +41,17 @@ const Api = () => {
 		<View style={styles.container}>
 			<Text style={styles.head}>Pilates on Demand</Text>
 			{videos.map((video) => {
-				if (
-					video.privacy.embed === "public" &&
-					video.duration !== 0 &&
-					video.privacy.view !== "nobody"
-				) {
-					return (
-						<View
-							key={video.uri.substring(8)}
-							style={styles.videos}
-						>
-							<Vimeo video={video.uri.substring(8)} width="350" />
-						</View>
-					);
-				}
+				// if (
+				// video.privacy.embed === "public" &&
+				// video.duration !== 0
+				// video.privacy.view !== "nobody"
+				// ) {
+				return (
+					<View key={video.uri.substring(8)} style={styles.videos}>
+						<Vimeo video={video.uri.substring(8)} width="350" />
+					</View>
+				);
+				// }
 			})}
 		</View>
 	);
